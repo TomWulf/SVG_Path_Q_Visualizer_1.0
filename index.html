@@ -29,11 +29,22 @@
     <circle id="controlPoint" r="5" fill="green"></circle>
     <circle id="endPoint" r="5" fill="red"></circle>
   </svg>
+
   <br>
-  <input type="text" id="pathCode" value="" readonly width="60em"> 
+  <input type="text" id="pathCode" value="" readonly width="60em"><br>
   <button id="copyButton">Copy Path to Clip Board</button>
   <button id="helpButton">Help</button>
  `
+  <div id="helpModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Help Information</h2>
+      <p>For reference, the SVG area is 600 X 600 pixels. Use the input fields to adjust the x y coordinates of the start, and end points (0 - 600).</p>
+      <p>Similarly, you can adjust the location of the control point (which can be off the display screen). The curve will update dynamically as you change the values.</p>
+      <p>You can use the save button to copy the displayed data (d) parameter for the path into the clip board. Then you can paste it into your application.</p>
+    </div>
+  </div>
+
 </main>
 <footer>&copy; 2025 Tom Wulf</footer>
 </body>

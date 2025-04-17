@@ -4,6 +4,10 @@ const startPoint = document.getElementById("startPoint");
 const controlPoint = document.getElementById("controlPoint");
 const endPoint = document.getElementById("endPoint");
 const pathCode = document.getElementById("pathCode");
+const helpButton = document.getElementById("helpButton");
+const helpModal = document.getElementById("helpModal");
+const closeModal = document.querySelector(".close");
+
 
 const inputs = {
   startX: document.getElementById("startX"),
@@ -49,6 +53,23 @@ copyButton.addEventListener("click", () => {
 // Add event listeners to update the curve on input change
 Object.values(inputs).forEach(input => {
   input.addEventListener("input", updateCurve);
+});
+
+// Show the modal when the help button is clicked
+helpButton.addEventListener("click", () => {
+  helpModal.style.display = "block";
+});
+
+// Close the modal when the close button is clicked
+closeModal.addEventListener("click", () => {
+  helpModal.style.display = "none";
+});
+
+// Close the modal when clicking outside of it
+window.addEventListener("click", (event) => {
+  if (event.target === helpModal) {
+    helpModal.style.display = "none";
+  }
 });
 
 // Initialize the curve
