@@ -21,11 +21,12 @@ function updateCurve() {
   const controlY = parseFloat(inputs.controlY.value);
   const endX = parseFloat(inputs.endX.value);
   const endY = parseFloat(inputs.endY.value);
+  const copyButton = document.getElementById("copyButton");
 
   // Update the path's "d" attribute
   const d = `M ${startX},${startY} Q ${controlX},${controlY} ${endX},${endY}`;
   curve.setAttribute("d", d);
-  pathCode.setAttribute("textContent", d);
+  pathCode.value = "d = '" + d + "'";
 
   // Update the positions of the points
   startPoint.setAttribute("cx", startX);
@@ -35,6 +36,15 @@ function updateCurve() {
   endPoint.setAttribute("cx", endX);
   endPoint.setAttribute("cy", endY);
 }
+
+copyButton.addEventListener("click", () => {
+  const pathText = pathCode.value;
+  navigator.clipboard.writeText(pathText).then(() => {
+    alert("Path copied to clipboard!");
+  }).catch(err => {
+    console.error("Failed to copy text: ", err);
+  });
+});
 
 // Add event listeners to update the curve on input change
 Object.values(inputs).forEach(input => {
