@@ -3,6 +3,7 @@ const curve = document.getElementById("curve");
 const startPoint = document.getElementById("startPoint");
 const controlPoint = document.getElementById("controlPoint");
 const endPoint = document.getElementById("endPoint");
+const pathCode = document.getElementById("pathCode");
 
 const inputs = {
   startX: document.getElementById("startX"),
@@ -24,6 +25,7 @@ function updateCurve() {
   // Update the path's "d" attribute
   const d = `M ${startX},${startY} Q ${controlX},${controlY} ${endX},${endY}`;
   curve.setAttribute("d", d);
+  pathCode.setAttribute("textContent", d);
 
   // Update the positions of the points
   startPoint.setAttribute("cx", startX);
