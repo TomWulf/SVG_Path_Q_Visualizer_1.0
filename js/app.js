@@ -7,7 +7,7 @@ const pathCode = document.getElementById("pathCode");
 const helpButton = document.getElementById("helpButton");
 const helpModal = document.getElementById("helpModal");
 const closeModal = document.querySelector(".close");
-
+const baseLine = document.getElementById("baseLine");
 
 const inputs = {
   startX: document.getElementById("startX"),
@@ -34,6 +34,7 @@ function updateCurve() {
   // Update the path's "d" attribute
   const d = `M ${startX},${startY} C ${controlX},${controlY} ${controlX2},${controlY2} ${endX},${endY}`;
   curve.setAttribute("d", d);
+
   pathCode.value = "d = '" + d + "'";
 
   // Update the positions of the points
@@ -45,6 +46,11 @@ function updateCurve() {
   controlPoint2.setAttribute("cy", controlY2);
   endPoint.setAttribute("cx", endX);
   endPoint.setAttribute("cy", endY);
+
+  baseLine.setAttribute("x1", startX);
+  baseLine.setAttribute("y1", startY);
+  baseLine.setAttribute("x2", endX);
+  baseLine.setAttribute("y2", endY);
 }
 
 const controlPoint2 = document.createElementNS("http://www.w3.org/2000/svg", "circle");
