@@ -12,6 +12,10 @@ const copyButton = document.getElementById("copyButton");
 const controline1 = document.getElementById("controlLine1");
 const controline2 = document.getElementById("controlLine2");
 const controlJoin = document.getElementById("controlJoin");
+const startLabel = document.getElementById("startLabel");
+const control1Label = document.getElementById("control1Label");
+const control2Label = document.getElementById("control2Label");
+const endLabel = document.getElementById("endLabel");
 
 const inputs = {
   startX: document.getElementById("startX"),
@@ -69,7 +73,16 @@ function updateCurve() {
   controlJoin.setAttribute("x2", controlX2);
   controlJoin.setAttribute("y2", controlY2);
 
-
+  // Update the labels
+  const offset = 10;
+  startLabel.setAttribute("x", inputs.startX.value - offset);
+  startLabel.setAttribute("y", inputs.startY.value - offset);
+  control1Label.setAttribute("x", inputs.controlX.value - offset);
+  control1Label.setAttribute("y", inputs.controlY.value - offset);
+  control2Label.setAttribute("x", inputs.controlX2.value - offset);
+  control2Label.setAttribute("y", inputs.controlY2.value - offset);
+  endLabel.setAttribute("x", inputs.endX.value - offset);
+  endLabel.setAttribute("y", inputs.endY.value - offset);
 
 }
 

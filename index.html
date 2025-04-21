@@ -30,32 +30,39 @@
     <circle id="startPoint" r="5" fill="red"></circle>
     <circle id="controlPoint" r="5" fill="green"></circle>
     <circle id="endPoint" r="5" fill="red"></circle>
-    <line id="baseLine" stroke-dasharray="5,10" stroke="black" stroke-width="1"></line>
+    <line id="baseLine" stroke-dasharray="5,10" stroke="black" stroke-width="2"></line>
     <line id="controlLine1" stroke-dasharray="2,10" stroke="grey" stroke-width="2"></line>
     <line id="controlLine2" stroke-dasharray="2,10" stroke="grey" stroke-width="2"></line>
     <line id="controlJoin" stroke-dasharray="2,10" stroke="grey" stroke-width="2"></line>
 
+    <!-- Labels -->
+    <text id="startLabel" font-size="16" fill="black" >Start</text>
+    <text id="control1Label" font-size="16" fill="black">Control 1</text>
+    <text id="control2Label" font-size="16" fill="black">Control 2</text>
+    <text id="endLabel" font-size="16" fill="black">End</text>
+
+
   </svg>
 
   <br>
-  <input type="text" id="pathCode" value="" readonly width="60em"><br>
+  <input type="text" id="pathCode" value="" readonly width="800px"><br>
   <button id="copyButton">Copy Path to Clip Board</button>
   <button id="helpButton">Help</button>
  `
   <div id="helpModal" class="modal">
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <span class="close"><button>Close</button></span>
       <h2>Help Information</h2>
       <p>For reference, the SVG area is 800 X 800 pixels. You can resize it to fit.</p>
       <p>Use the input fields to adjust the x y coordinates of the start, and end points (0 - 800).</p>
       <p>Similarly, you can adjust the location of the control point (which can be off the display screen).</p>
       <p>The curve will update dynamically as you change the values.</p>
       <p>The dotted faint lines show how the control points work to shape the curve.</p>
-      <p>You can use the save button to copy the displayed data (d) parameter for the SVG path.</p>
-      <p> Then you can paste it into your application.</p>
+      <p>You can use the save button to put the data (d) parameter for the SVG path into the copy buffer.</p>
+      <p>Then you can can paste it into your application.</p>
     </div>
   </div>
 
 </main>
-<footer>&copy; 2025 Tom Wulf <a href="mailto:Tom.Wulf@uc.edu">Tom.Wulf@uc.edu</a></footer>
+<footer>&copy; 2025 Tom Wulf <a href="mailto:Tom.Wulf@uc.edu?subject=SVG_Path_C_Visualizer_1.0">Mail: Tom.Wulf@uc.edu</a></footer>
 </body>
