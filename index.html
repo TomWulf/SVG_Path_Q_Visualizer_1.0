@@ -4,14 +4,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SVG Q Curve Visualizer v 1.0</title>
+  <title>SVG Path C Curve Visualizer v 1.0</title>
   <link rel="stylesheet" href="css/style.css">
   <script defer src="js/app.js"></script>
 </head>
 
 <body>
 <header>
-  <h1>SVG C Curve Visualizer v 1.0</h1>
+  <h1>SVG Path C Curve Visualizer v 1.0</h1>
 </header>
 <main>
   <div class="controls">
@@ -20,7 +20,7 @@
     <label>End X: <input type="number" id="endX" value="750" min="0" max="800"></label>
     <label>End Y: <input type="number" id="endY" value="400" min="0" max="800"></label>
     <label>Control X1: <input type="number" id="controlX" value="200"></label>
-    <label>Control Y1: <input type="number" id="controlY" value="50"></label>
+    <label>Control Y1: <input type="number" id="controlY" value="750"></label>
     <label>Control X2: <input type="number" id="controlX2" value="600"></label>
     <label>Control Y2: <input type="number" id="controlY2" value="50"></label>
 
@@ -31,6 +31,10 @@
     <circle id="controlPoint" r="5" fill="green"></circle>
     <circle id="endPoint" r="5" fill="red"></circle>
     <line id="baseLine" stroke-dasharray="5,10" stroke="black" stroke-width="1"></line>
+    <line id="controlLine1" stroke-dasharray="2,10" stroke="grey" stroke-width="2"></line>
+    <line id="controlLine2" stroke-dasharray="2,10" stroke="grey" stroke-width="2"></line>
+    <line id="controlJoin" stroke-dasharray="2,10" stroke="grey" stroke-width="2"></line>
+
   </svg>
 
   <br>
@@ -42,10 +46,11 @@
     <div class="modal-content">
       <span class="close">&times;</span>
       <h2>Help Information</h2>
-      <p>For reference, the SVG area is 800 X 800 pixels. </p>
+      <p>For reference, the SVG area is 800 X 800 pixels. You can resize it to fit.</p>
       <p>Use the input fields to adjust the x y coordinates of the start, and end points (0 - 800).</p>
       <p>Similarly, you can adjust the location of the control point (which can be off the display screen).</p>
       <p>The curve will update dynamically as you change the values.</p>
+      <p>The dotted faint lines show how the control points work to shape the curve.</p>
       <p>You can use the save button to copy the displayed data (d) parameter for the SVG path.</p>
       <p> Then you can paste it into your application.</p>
     </div>

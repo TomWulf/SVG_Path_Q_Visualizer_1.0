@@ -8,6 +8,10 @@ const helpButton = document.getElementById("helpButton");
 const helpModal = document.getElementById("helpModal");
 const closeModal = document.querySelector(".close");
 const baseLine = document.getElementById("baseLine");
+const copyButton = document.getElementById("copyButton");
+const controline1 = document.getElementById("controlLine1");
+const controline2 = document.getElementById("controlLine2");
+const controlJoin = document.getElementById("controlJoin");
 
 const inputs = {
   startX: document.getElementById("startX"),
@@ -29,7 +33,6 @@ function updateCurve() {
   const controlY2 = parseFloat(inputs.controlY2.value);
   const endX = parseFloat(inputs.endX.value);
   const endY = parseFloat(inputs.endY.value);
-  const copyButton = document.getElementById("copyButton");
 
   // Update the path's "d" attribute
   const d = `M ${startX},${startY} C ${controlX},${controlY} ${controlX2},${controlY2} ${endX},${endY}`;
@@ -51,6 +54,23 @@ function updateCurve() {
   baseLine.setAttribute("y1", startY);
   baseLine.setAttribute("x2", endX);
   baseLine.setAttribute("y2", endY);
+  controline1.setAttribute("x1", startX);
+  controline1.setAttribute("y1", startY);
+  controline1.setAttribute("x2", controlX);
+  controline1.setAttribute("y2", controlY);
+
+  controline2.setAttribute("x1", endX);
+  controline2.setAttribute("y1", endY);
+  controline2.setAttribute("x2", controlX2);
+  controline2.setAttribute("y2", controlY2);
+
+  controlJoin.setAttribute("x1", controlX);
+  controlJoin.setAttribute("y1", controlY);
+  controlJoin.setAttribute("x2", controlX2);
+  controlJoin.setAttribute("y2", controlY2);
+
+
+
 }
 
 const controlPoint2 = document.createElementNS("http://www.w3.org/2000/svg", "circle");
