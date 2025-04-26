@@ -37,7 +37,7 @@ function updateCurve() {
   const d = `M ${startX},${startY} Q ${controlX},${controlY} ${endX},${endY}`;
   curve.setAttribute("d", d);
 
-  pathCode.value = "d = '" + d + "'";
+  pathCode.textContent = "d = '" + d + "'";
 
   // Update the positions of the points
   startPoint.setAttribute("cx", startX);
